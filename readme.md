@@ -35,7 +35,9 @@ networks:
 
 ## create dhparam key
 
+```bash
 sudo openssl dhparam -out ~/develop/dhparam/dhparam-2048.pem 2048
+```
 
 
 ## create nginx vhost
