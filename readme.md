@@ -72,6 +72,7 @@ server {
 
 ## Update the nginx host with your SSL certificate
 
+```nginx
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -109,7 +110,7 @@ server {
     }
 
 }
-
+```
 
 ## restart your nginx container
 
