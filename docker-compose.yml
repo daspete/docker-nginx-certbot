@@ -1,0 +1,27 @@
+services:
+  webserver: 
+    container_name: webserver
+    image: nginx:latest
+    networks:
+      - webnet
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - dockertest1
+    volumes:
+      - ./www:/var/www/html
+      - ./nginx:/etc/nginx/templates
+      - ./certbot-etc:/etc/letsencrypt
+      - ./certbot-var:/var/lib/letsencrypt
+      - ./dhparam:/etc/ssl/certs
+
+  dockertest1:
+    container_name: dockertest1
+    image: ghost
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
